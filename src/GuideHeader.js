@@ -8,7 +8,7 @@ const GuideHeader = ({onDropdownClick, reset, source}) => {
 
 	return (
 		<div>
-			<DraftsiteDropdown onDropdownClick={onDropdownClick}/>
+			<DraftsiteDropdown onDropdownClick={onDropdownClick} source={source}/>
 			{[<GuideHowTo />, <GuideKey source={source}/>][reset]}
 		</div>
 	)

@@ -8,14 +8,14 @@ class GuideRankings extends Component {
 	constructor() {
 		super()
 		this.state = {
-			source: '',
+			source: 'Select Draft Site',
 			reset: 0
 		}
 	}
 
 	onDropdownClick = (event) => {
 		let hold = 1
-		if (event==='Reset') { hold = 0 } 
+		if (event==='Reset') { hold = 0, event='Select Draft Site' } 
 		this.setState({reset: hold})
 		this.setState({source: event});
 	}
