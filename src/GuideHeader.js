@@ -1,9 +1,16 @@
 import React from 'react';
 import DraftsiteDropdown from './DraftsiteDropdown';
+import GuideKey from './GuideKey';
+import GuideHowTo from './GuideHowTo';
 
-const GuideHeader = () => {
+
+const GuideHeader = ({onDropdownClick, reset, source}) => {
+
 	return (
-		<DraftsiteDropdown onDropdownClick={this.onDropdownClick}/>
+		<div>
+			<DraftsiteDropdown onDropdownClick={onDropdownClick}/>
+			{[<GuideHowTo />, <GuideKey source={source}/>][reset]}
+		</div>
 	)
 }
 
