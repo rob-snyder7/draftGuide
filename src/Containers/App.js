@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavbarFunc from './Navbar';
+import NavbarFunc from '../Components/Navbar';
 import 'react-table/react-table.css'
-import Homepage from './Homepage';
-import TableRankings from './TableRankings';
+import Homepage from '../Components/Homepage';
+import TableRankings from '../Components/TableRankings';
 import GuideRankings from './GuideRankings';
 import 'tachyons';
-import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks } from './Data';
-
+import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks } from '../Utils/Data';
+ 
 
 class App extends Component {
   constructor() {
@@ -40,14 +40,6 @@ class App extends Component {
 export default App;
 
 
-
-    	// <ReactTable 
-    	// 	defaultPageSize={alRanks.length}
-    	// 	showPagination={false}
-	    // 	data={alRanks}
-	    // 	columns={columns}
-	    // 	style={{height:'90vh'}}
-    	// />
 
 
 

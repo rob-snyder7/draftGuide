@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import ReactTable from "react-table";
-import GuideHeader from './GuideHeader';
-import { rankColumns } from './Data';
-import { alterColumn, alterData } from './GuideFunctions';
+import GuideHeader from '../Components/GuideHeader/GuideHeader';
+import { rankColumns } from '../Utils/Data';
+import { alterColumn, alterData } from '../Utils/GuideFunctions';
+
+
 
 class GuideRankings extends Component {
 	constructor(props) {
@@ -18,6 +20,7 @@ class GuideRankings extends Component {
 	componentWillReceiveProps = (nextProps) => {
 		this.setState({data: nextProps['data']})
 	}
+
 
 	onDropdownClick = (event) => {
 		let hold = 1

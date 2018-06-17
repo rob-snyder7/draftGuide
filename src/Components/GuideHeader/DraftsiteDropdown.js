@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import { DropdownButton, ButtonToolbar, MenuItem } from 'react-bootstrap';
 
 class DraftsiteDropdown extends Component {
-	constructor (props) {
-		super(props)
-		this.state = {
-			title: "Draft website"
-		}
-	}
 
 	render () {
 

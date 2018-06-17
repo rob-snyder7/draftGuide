@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTable from "react-table";
-import { rankColumns } from './Data';
+import { rankColumns } from '../Utils/Data';
 
 const TableRankings = ({name, data}) => {	
 	return (
