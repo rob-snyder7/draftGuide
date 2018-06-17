@@ -6,6 +6,8 @@ import Homepage from './Homepage';
 import TableRankings from './TableRankings';
 import GuideRankings from './GuideRankings';
 import 'tachyons';
+import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks } from './Data';
+
 
 class App extends Component {
   constructor() {
@@ -22,7 +24,8 @@ class App extends Component {
   }
 
   render() {
-  	let mainDisplays = [<TableRankings name={this.state.position}/>, <GuideRankings name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />]
+    const positionDataReference = {'All': alRanks, 'Quarterbacks': qbRanks, 'Running Backs': rbRanks,'Wide Receivers': wrRanks, 'Tight Ends': teRanks, 'Defenses': deRanks, 'Kickers': kiRanks}
+  	let mainDisplays = [<TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />]
     return (
     	<div>
 	    	<NavbarFunc onItemClick={this.onItemClick} />

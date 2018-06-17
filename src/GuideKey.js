@@ -56,15 +56,3 @@ const GuideKey = ({source}) => {
 }
 
 export default GuideKey;
-		  //     	<div className='dt'>
-				//    <div class="dtc">woo</div>
-				//    <div class="dtc">hoo</div>
-				// </div>
-		  //     	<div className='dt'>
-				//    <div class="dtc">woo</div>
-				//    <div class="dtc">hoo</div>
-				// </div>
-				// <div className='dt'>
-				//    <div class="dtc">woo</div>
-				//    <div class="dtc">hoo</div>
-				// </div>

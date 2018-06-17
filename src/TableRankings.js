@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactTable from "react-table";
-import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks, columns } from './Data';
+import { rankColumns } from './Data';
 
-const TableRankings = ({name}) => {
-	const positionDataReference = {'All': alRanks, 'Quarterbacks': qbRanks, 'Running Backs': rbRanks,'Wide Receivers': wrRanks, 'Tight Ends': teRanks, 'Defenses': deRanks, 'Kickers': kiRanks}
-	
+const TableRankings = ({name, data}) => {	
 	return (
 		<div>
 			<h1 className='tc'>{name} Rankings</h1>
 	    	<ReactTable 
-	    		defaultPageSize={positionDataReference[name].length}
+	    		defaultPageSize={data.length}
 	    		showPagination={false}
-		    	data={positionDataReference[name]}
-		    	columns={columns}
+		    	data={data}
+		    	columns={rankColumns}
 		    	style={{height:'90vh'}}
 	    	/>
 		</div>

@@ -1,39 +1,47 @@
 import React, {Component} from 'react';
 import ReactTable from "react-table";
 import GuideHeader from './GuideHeader';
-import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks, columns } from './Data';
-
+import { rankColumns } from './Data';
+import { alterColumn, alterData } from './GuideFunctions';
 
 class GuideRankings extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			source: 'Select Draft Site',
-			reset: 0
+			reset: 0,
+			columns: rankColumns,
+			data: this.props.data
 		}
+	}
+
+	componentWillReceiveProps = (nextProps) => {
+		this.setState({data: nextProps['data']})
 	}
 
 	onDropdownClick = (event) => {
 		let hold = 1
-		if (event==='Reset') { hold = 0, event='Select Draft Site' } 
+		if (event==='Reset') { 
+			hold = 0 
+			event='Select Draft Site' } 
 		this.setState({reset: hold})
 		this.setState({source: event});
+		this.setState({columns: alterColumn(event)})
+		this.setState({data: alterData(this.state.data, event)})
 	}
 
 
+
 	render() {
-		const positionDataReference = {'All': alRanks, 'Quarterbacks': qbRanks, 'Running Backs': rbRanks,'Wide Receivers': wrRanks, 'Tight Ends': teRanks, 'Defenses': deRanks, 'Kickers': kiRanks}
 		return (
 			<div>
+				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
 
-				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source}/>
-
-				<h1 className='tc'>{this.props.name} Rankings</h1>
 		    	<ReactTable 
-		    		defaultPageSize={positionDataReference[this.props.name].length}
+		    		defaultPageSize={this.state.data.length}
 		    		showPagination={false}
-			    	data={positionDataReference[this.props.name]}
-			    	columns={columns}
+			    	data={this.state.data}
+			    	columns={this.state.columns}
 			    	style={{height:'90vh'}}
 		    	/>
 			</div>

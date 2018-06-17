@@ -14,7 +14,12 @@ const headStyle = {
 }
 
 
-export const columns = [{
+export const rankColumns = [
+{
+	Header: 'Rank',
+	accessor: 'key',
+	sortable: true
+}, {
 	Header: 'Name',
 	accessor: 'name',
 	sortable: true
@@ -51,15 +56,19 @@ export const columns = [{
 	accessor: 'AVG',
 	sortable: true
 }, {
-	Header: 'Dif',
-	accessor: 'DIF',
-	sortable: true
-}, {
 	Header: 'STD',
 	accessor: 'STD',
 	sortable: true
 },
 ]
+
+export let guideColumns = rankColumns.slice(0,10)
+guideColumns.push({
+	Header: 'DIF',
+	accessor: 'DIF',
+	sortable: true
+})
+guideColumns.shift()
 
 export const colPlayers = [
 {
