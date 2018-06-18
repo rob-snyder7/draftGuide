@@ -9,6 +9,9 @@
 	 	let check = adjguideColumns.splice(sourceColumn[event],1);
 	 	adjguideColumns.splice(3,0,check[0]);
 	 	adjguideColumns[8]['Header'] = 'AVG w/o ' + event;
+  		[3,8,9].forEach(element => {
+  			adjguideColumns[element]['headerStyle'] = {backgroundColor: '#5E8091', fontWeight: 400, width: '10%', color: 'white'};
+  		});
 	 	return adjguideColumns;
  	}
  }

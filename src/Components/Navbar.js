@@ -3,6 +3,7 @@ import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 
 const NavbarFunc = ({ onItemClick }) => {
 	
+
 	const positions = ['All','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
 	const navLinks = [0,1]
 
@@ -18,7 +19,7 @@ const NavbarFunc = ({ onItemClick }) => {
 	          <Navbar.Header>
 	              <Navbar.Brand>
 	                <span>Fantasy Football</span>
-	              </Navbar.Brand>
+				  </Navbar.Brand>
 	              <Navbar.Toggle/>
 	          </Navbar.Header>
 	          <Navbar.Collapse>
@@ -33,7 +34,7 @@ const NavbarFunc = ({ onItemClick }) => {
 		           		{navLinks[1]}
 		            </NavDropdown>
 		          </Nav>
-           	  <Navbar.Text pullRight>Consolidated rankings data and draft strategy guide</Navbar.Text>
+           	  <Navbar.Text pullRight>Rankings and Draft Strategy Guide</Navbar.Text>
 	          </Navbar.Collapse>
 	        </Navbar>
 		</div>

@@ -4,17 +4,22 @@ import { rankColumns } from '../Utils/Data';
 
 const TableRankings = ({name, data}) => {	
 	return (
-		<div>
-			<h1 className='tc'>{name} Rankings</h1>
+		<div className=''>
+			<h1 className='rankheader tc near-white vh-25 ma0'>{name} Rankings</h1>
 	    	<ReactTable 
-	    		defaultPageSize={data.length}
+	    		pageSize={data.length}
 	    		showPagination={false}
 		    	data={data}
+		    	defaultSorted={[{id: 'AVG', asc: true}]}
 		    	columns={rankColumns}
-		    	style={{height:'90vh'}}
+		    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
+		    	style={{height: '75vh', background: 'white'}}
+		    	getTrProps={(state, rowInfo) => {
+		    		return {style: {background: rowInfo.viewIndex % 2 === 0 ? 'white' : '#CCCCCC'}}}}
 	    	/>
 		</div>
 	)
 }
 
 export default TableRankings;
+
