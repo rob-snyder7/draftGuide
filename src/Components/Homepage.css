@@ -1,0 +1,13 @@
+.homepage {
+	margin-top: calc(6vw + 8vh);
+	padding-left: calc(4vw);
+	padding-right: calc(4vw);
+}
+
+.homeHeader {
+	font-size: calc(20px + 3vw);
+}
+
+.homeText {
+	font-size: calc(14px + .5vw);
+}

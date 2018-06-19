@@ -1,5 +1,18 @@
  import { guideColumns, rankColumns } from './Data.js';
 
+export function alterWidth(columns) {
+	for (var i = 0; i < columns.length; i++) {
+		columns[i]['minWidth'] = 50;
+		if (columns[i]['Header']===`Rank`) {
+			columns[i]['minWidth'] = 40;
+		} else if (columns[i]['Header']===`Name`) {
+			columns[i]['minWidth'] = 100
+		}
+	} 
+	return columns;
+}
+
+
  export function alterColumn(event) {
  	if (event==='Select Draft Site') {
  		return rankColumns;
@@ -53,3 +66,7 @@
 	 	return adjdata;
 	}	 	
  }
+
+
+
+

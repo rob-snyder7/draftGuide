@@ -10,24 +10,19 @@ body {
     overflow-y: scroll;
 }
 
+
 .ReactTable .rt-thead::-webkit-scrollbar {
    background: transparent; 
 } 
 
+
 .rankheader {
-	padding-top: 14vh;
+	padding-top: 11.5vh;
+	height: 20vh;
 }
 
-.homepage {
-	margin-top: calc(6vw + 8vh);
-	padding-left: calc(4vw);
-	padding-right: calc(4vw);
+.pageFrame {
+	padding-left: 5vw;
+	padding-right: 5vw;
 }
 
-.homeHeader {
-	font-size: calc(20px + 3vw);
-}
-
-.homeText {
-	font-size: calc(14px + .5vw);
-}

@@ -10,7 +10,7 @@ export const kiRanks = [{'name': 'Greg Zuerlein', 'key': 2, 'YAH': 1, 'CBS': 6, 
 
 
 const headerStyle = {
-	background: '#CCCCCC'
+	background: '#CCCCCC',
 }
 
 export const rankColumns = [
@@ -23,52 +23,52 @@ export const rankColumns = [
 	Header: 'Name',
 	accessor: 'name',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'Team',
 	accessor: 'team',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'Bye',
 	accessor: 'bye',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'Yahoo',
 	accessor: 'YAH',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'CBS',
 	accessor: 'CBS',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'ESPN',
 	accessor: 'ESP',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'Fox',
 	accessor: 'FOX',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'NFL',
 	accessor: 'NFL',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'AVG',
 	accessor: 'AVG',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 }, {
 	Header: 'STD',
 	accessor: 'STD',
 	sortable: true,
-	headerStyle: headerStyle
+	headerStyle: headerStyle,
 },  
 ]
 

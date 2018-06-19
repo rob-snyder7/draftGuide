@@ -13,11 +13,12 @@ class App extends Component {
   constructor() {
   	super()
   	this.state = {
-  		route: 2,
-      position: ''
+  		route: 0,
+      position: 'All'
   	}
   } 
 
+// set route to 2 and position ''
 
   onItemClick = (event, event2) => {
   	this.setState({route: event})
@@ -29,7 +30,7 @@ class App extends Component {
     const positionDataReference = {'All': alRanks, 'Quarterbacks': qbRanks, 'Running Backs': rbRanks,'Wide Receivers': wrRanks, 'Tight Ends': teRanks, 'Defenses': deRanks, 'Kickers': kiRanks}
   	let mainDisplays = [<TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />]
     return (
-    	<div>
+    	<div className='pageFrame'>
 	    	<NavbarFunc onItemClick={this.onItemClick} />
     		<div className='fl w-100'>
 	    		{mainDisplays[this.state.route]}
