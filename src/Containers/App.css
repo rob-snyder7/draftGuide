@@ -10,14 +10,25 @@ body {
     overflow-y: scroll;
 }
 
-
 .ReactTable .rt-thead::-webkit-scrollbar {
    background: transparent; 
 } 
 
+.ReactTable .rt-tbody {
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.guideKey {
+	font-size:10px;
+}
 
 .rankheader {
 	padding-top: 11.5vh;
+	height: 20vh;
+}
+
+.guideheader {
 	height: 20vh;
 }
 
@@ -26,3 +37,42 @@ body {
 	padding-right: 5vw;
 }
 
+
+div.insideRow {
+	padding-right:0px;
+	padding-left: 0px;
+}
+
+div.row {
+	padding-left: 4%;
+	padding-right: 4%;
+	font-family: 'Josefin Sans', sans-serif;	
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+div.color {
+	border: 1px solid black;
+	height: 1.1em;
+}
+
+.draftGuideText {
+	font-size: 10px;
+}
+
+@media screen and (max-width: 860px) {
+  .draftGuideText {
+     font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .draftGuideText {
+     font-size: 6px;
+  }
+}
+
+div.btn-toolbar {
+	width: 20%;
+	float: true;
+}

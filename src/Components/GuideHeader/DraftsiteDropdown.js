@@ -12,7 +12,7 @@ class DraftsiteDropdown extends Component {
 		return (
 
 			<div>
-				<ButtonToolbar>
+				<ButtonToolbar className='fl w-30'>
 				  	<DropdownButton id='key' title={this.props.source}>
 				 	   {dropdownOptions}
 				    </DropdownButton>

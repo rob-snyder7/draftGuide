@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactTable from "react-table";
 import GuideHeader from '../Components/GuideHeader/GuideHeader';
 import { rankColumns } from '../Utils/Data';
-import { alterColumn, alterData } from '../Utils/GuideFunctions';
+import { alterColumn, alterData, alterWidth } from '../Utils/GuideFunctions';
 
 
 
@@ -63,7 +63,7 @@ class GuideRankings extends Component {
 	render() {
 		return (
 			<div>
-				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
+				<GuideHeader className='guideheader' onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
 
 		    	<ReactTable 
 		    		pageSize={this.state.data.length}
@@ -71,8 +71,8 @@ class GuideRankings extends Component {
 			    	data={this.state.data}
 			    	sorted={this.state.sorted}
 			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
-			    	columns={this.state.columns}
-			    	style={{height:'90vh', background: 'white'}}
+			    	columns={alterWidth(this.state.columns)}
+			    	style={{height:'75vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {
 			    			style: {
