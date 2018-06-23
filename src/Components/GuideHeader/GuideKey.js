@@ -5,8 +5,7 @@ const GuideKey = ({source}) => {
 			<div className='row pt3 white textColor draftGuideText'>
 				          		<div className='col-md-4 col-sm-4 col-xs-12 guideInstructions textColor'>
 					         		<span id='tableInstructions'>
-					         				You have selected {source} as your draft website
-					         				The AVG w/o {source} column shows players average rank without {source}
+					         				The table compares {source} to average of other sites. Use DIF column to determine value of players. 
 					         		</span>
 					          	</div>
 				          		<div className='col-md-8 col-sm-8 col-xs-12 keyTable draftGuideText'>
