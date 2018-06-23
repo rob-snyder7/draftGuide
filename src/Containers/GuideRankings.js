@@ -72,7 +72,7 @@ class GuideRankings extends Component {
 			    	sorted={this.state.sorted}
 			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
 			    	columns={alterWidth(this.state.columns)}
-			    	style={{height:'75vh', background: '#CCCCCC'}}
+			    	style={{height:'70vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {
 			    			style: {

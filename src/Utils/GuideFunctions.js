@@ -2,16 +2,16 @@
 
 export function alterWidth(columns) {
 	for (var i = 0; i < columns.length; i++) {
-		columns[i]['minWidth'] = 50;
+		columns[i]['minWidth'] = 40;
 		if (columns[i]['Header']===`Rank`) {
-			columns[i]['minWidth'] = 40;
+			columns[i]['minWidth'] = 30;
 		} else if (columns[i]['Header']===`Name`) {
-			columns[i]['minWidth'] = 100
+			columns[i]['minWidth'] = 90
 		}
 	} 
 	return columns;
 }
-
+// 50,40,100
 
  export function alterColumn(event) {
  	if (event==='Select Draft Site') {

@@ -7,12 +7,17 @@ import GuideHowTo from './GuideHowTo';
 const GuideHeader = ({onDropdownClick, reset, source, name}) => {
 
 	return (
-		<div className='vh-25 pt5'>
+		<div className='guideheader'>
 			<div className='row'>
-				<DraftsiteDropdown onDropdownClick={onDropdownClick} source={source}/>
-				<h1 className='fl w-70 tc ma0 white'>{name} Rankings</h1>
+				<div className='col-md-2 col-sm-2 col-xs-2'>
+					<DraftsiteDropdown onDropdownClick={onDropdownClick} source={source}/>
+				</div>
+				<div className='col-md-8 col-sm-10 col-xs-10'>
+					<h1 className='guideHead tc ma0 white'>{name} Rankings</h1>
+				</div>
+				<div className='col-md-2 col-sm-0 col-xs-0'></div>
 			</div>
-			<div className='row'>
+			<div className=''>
 			{[<GuideHowTo />, <GuideKey source={source}/>][reset]}
 			</div>
 		</div>

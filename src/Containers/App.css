@@ -29,7 +29,12 @@ body {
 }
 
 .guideheader {
-	height: 20vh;
+	height: 27vh;
+	padding-top: 10vh;
+}
+
+.guideHead {
+	font-size: calc(2vw + 15px);
 }
 
 .pageFrame {
@@ -37,15 +42,30 @@ body {
 	padding-right: 5vw;
 }
 
+#tableInstructions {
+	margin-bottom: 0px;
+}
+
+.guideInstructions {
+	border: 2px solid black;
+	padding: 3px 3px 3px 3px;
+	background-color: #5E8091;
+	margin-bottom: 5px;
+}
 
 div.insideRow {
 	padding-right:0px;
 	padding-left: 0px;
 }
 
+div.keyText {
+	padding-left: 1vw;
+	padding-right: 0vw;
+}
+
 div.row {
-	padding-left: 4%;
-	padding-right: 4%;
+	padding-left: 3%;
+	padding-right: 3%;
 	font-family: 'Josefin Sans', sans-serif;	
 	margin-right: 0px;
 	margin-left: 0px;
@@ -54,13 +74,17 @@ div.row {
 div.color {
 	border: 1px solid black;
 	height: 1.1em;
+	min-height: 4px;
 }
 
-.draftGuideText {
-	font-size: 10px;
+
+div.draftGuideText {
+	font-size: calc(1.1vw);
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-@media screen and (max-width: 860px) {
+/*@media screen and (max-width: 860px) {
   .draftGuideText {
      font-size: 8px;
   }
@@ -70,9 +94,23 @@ div.color {
   .draftGuideText {
      font-size: 6px;
   }
-}
+}*/
 
 div.btn-toolbar {
 	width: 20%;
-	float: true;
+}
+
+.btn {
+	padding: 4px 8px !important;
+	font-size: 10px !important;
+}
+
+@media screen and (max-width: 400px) {
+  .btn {
+     font-size: 6px !important;
+  }
+}
+
+.dropdown-menu>li>a {
+	font-size: 10px !important;
 }
