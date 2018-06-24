@@ -13,19 +13,19 @@ body {
 .ReactTable .rt-thead::-webkit-scrollbar {
    background: transparent; 
 } 
-
+/*
 .ReactTable .rt-tbody {
-	font-size: 12px;
-	line-height: 12px;
-}
+	font-size: 16px;
+	line-height: 16px;
+}*/
 
 .guideKey {
 	font-size:10px;
 }
 
 .rankheader {
-	padding-top: 11.5vh;
-	height: 20vh;
+	padding-top: 6vh;
+	height: 12vh;
 }
 
 .guideheader {
@@ -84,17 +84,6 @@ div.draftGuideText {
 	padding-right: 0px;
 }
 
-/*@media screen and (max-width: 860px) {
-  .draftGuideText {
-     font-size: 8px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .draftGuideText {
-     font-size: 6px;
-  }
-}*/
 
 div.btn-toolbar {
 	width: 20%;
@@ -111,6 +100,3 @@ div.btn-toolbar {
   }
 }
 
-.dropdown-menu>li>a {
-	font-size: 10px !important;
-}

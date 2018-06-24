@@ -17,7 +17,7 @@ const TableRankings = ({name, data}) => {
 		    	defaultSorted={[{id: 'AVG', asc: true}]}
 		    	columns={alterWidth(rankColumns)}
 		    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
-		    	style={{height: '77vh', background: '#CCCCCC'}}
+		    	style={{height: '85vh', background: '#CCCCCC'}}
 		    	getTrProps={(state, rowInfo) => {
 		    		return {style: {background: rowInfo.viewIndex % 2 === 0 ? 'white' : '#CCCCCC'}}}}
 	    	/>
