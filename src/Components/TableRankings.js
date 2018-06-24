@@ -8,14 +8,15 @@ import { alterWidth } from '../Utils/GuideFunctions';
 const TableRankings = ({name, data}) => {	
 	
 	return (
-		<div className=''>
-			<h1 className='rankheader tc near-white ma0'>{name} Rankings</h1>
+		<div>
+			<h1 className='rankheader white tc'>{name} Rankings</h1>
 	    	<ReactTable
 	    		pageSize={data.length}
 	    		showPagination={false}
 		    	data={data}
 		    	defaultSorted={[{id: 'AVG', asc: true}]}
-		    	columns={alterWidth(rankColumns)}
+		    	// columns={alterWidth(rankColumns)}
+		    	columns={rankColumns}
 		    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
 		    	style={{height: '85vh', background: '#CCCCCC'}}
 		    	getTrProps={(state, rowInfo) => {

@@ -11,7 +11,32 @@ export function alterWidth(columns) {
 	} 
 	return columns;
 }
+
+// try without above function?
 // 50,40,100
+
+export function rowColor(rowInfo, pageSize) {
+		let difVal = rowInfo.row.DIF / (pageSize/50)
+		  if (difVal > 12) {
+		  	return '#2D882D';
+		  } else if (difVal > 8) {
+		  	return '#55AA55';
+		  } else if (difVal > 4) {
+		  	return '#88CC88';
+		  } else if (difVal < -12) {
+		  	return '#AA3939';
+		  } else if (difVal < -8) {
+		  	return '#D46A6A';
+		  } else if (difVal < -4) {
+		  	return '#FFAAAA';
+		  }
+		if (rowInfo.viewIndex%2===0) {
+		  	return 'white'
+		  } else {
+			return '#CCCCCC';
+		  }
+	}
+
 
  export function alterColumn(event) {
  	if (event==='Select Draft Site') {
@@ -20,6 +45,7 @@ export function alterWidth(columns) {
  		const sourceColumn = {'Yahoo': 3, 'CBS': 4, 'ESPN': 5, 'FOX': 6, 'NFL': 7}
 	 	let adjguideColumns = guideColumns.map(u => Object.assign({}, u, { approved: true }));
 	 	let check = adjguideColumns.splice(sourceColumn[event],1);
+
 	 	adjguideColumns.splice(3,0,check[0]);
 	 	adjguideColumns[8]['Header'] = 'AVG w/o ' + event;
   		[3,8,9].forEach(element => {
@@ -28,6 +54,7 @@ export function alterWidth(columns) {
 	 	return adjguideColumns;
  	}
  }
+
 
  export function alterData(data, event) {
  	if (event==='Select Draft Site') {

@@ -3,7 +3,6 @@ import './Homepage.css';
 
 const Homepage = ({ onItemClick }) => {
 
-	// move to data?
 	const positions = ['All','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
 	const pageLinks = [0,1]
 
@@ -13,16 +12,16 @@ const Homepage = ({ onItemClick }) => {
 
 	return (
 
-			<article className="homepage tc white">
-			  <div className="fl w-100 w-50-ns">
+			<div style={{backgroundImage: 'url(' + require('../background.jpg') + ')'}} className="homepage tc">
+			  <div className="fl w-100 w-50-ns group">
 			    <h1 className='homeHeader'>Rankings</h1>
 			    {pageLinks[0]}
 			  </div>
-			  <div className="fl w-100 w-50-ns ph4-l">
+			  <div className="fl w-100 w-50-ns group">
 			    <h1 className='homeHeader'>Draft Guide</h1>
 			    {pageLinks[1]}
 			  </div>
-			</article>
+			</div>
 	)
 }
 

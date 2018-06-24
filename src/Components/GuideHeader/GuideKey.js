@@ -2,14 +2,14 @@ import React from 'react';
 
 const GuideKey = ({source}) => {
 	return (
-			<div className='row pt3 white textColor draftGuideText'>
-				          		<div className='col-md-4 col-sm-4 col-xs-12 guideInstructions textColor'>
-					         		<span id='tableInstructions'>
+			<div className='row white'>
+				          		<div className='col-md-4 col-sm-4 col-xs-12'>
+					         		<span>
 					         				The table compares {source} to average of other sites. Use DIF column to determine value of players. 
 					         		</span>
 					          	</div>
-				          		<div className='col-md-8 col-sm-8 col-xs-12 keyTable draftGuideText'>
-					          		<div className="row insideRow">
+				          		<div className='col-md-8 col-sm-8 col-xs-12'>
+					          		<div className="">
 					          			<div className='col-md-1 col-sm-1 col-xs-1 color' style={{backgroundColor: "#2D882D"}}>
 					          			</div>
 					          			<div className='col-md-5 col-sm-5 col-xs-5'>
@@ -21,7 +21,7 @@ const GuideKey = ({source}) => {
 					          				Highly overvalued - Do Not Draft!
 					          			</div>
 					          		</div>
-					          		<div className="row insideRow">
+					          		<div className="">
 					          			<div className='col-md-1 col-sm-1 col-xs-1 color' style={{backgroundColor: "#55AA55"}}>
 					          			</div>
 					          			<div className='col-md-5 col-sm-5 col-xs-5'>
@@ -33,7 +33,7 @@ const GuideKey = ({source}) => {
 					          				Moderately overvalued - Avoid this player
 					          			</div>
 					          		</div>
-					          		<div className="row insideRow">
+					          		<div className="">
 					          			<div className='col-md-1 col-sm-1 col-xs-1 color' style={{backgroundColor: "#88CC88"}}>
 					          			</div>
 					          			<div className='col-md-5 col-sm-5 col-xs-5'>

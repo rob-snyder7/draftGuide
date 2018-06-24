@@ -13,6 +13,7 @@ const headerStyle = {
 	background: '#CCCCCC',
 }
 
+
 export const rankColumns = [
 {
 	Header: 'Rank',

@@ -1,13 +1,26 @@
 .homepage {
-	margin-top: calc(6vw + 8vh);
+	padding-top: calc(8vw + 8vh);
 	padding-left: calc(4vw);
 	padding-right: calc(4vw);
+	height: 100%;
+	background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    color: white;
+    opacity: .85;
 }
 
 .homeHeader {
 	font-size: calc(20px + 3vw);
+	font-weight: 500;
 }
 
 .homeText {
 	font-size: calc(14px + .5vw);
+	font-weight: 500;
+}
+
+.group {
+	opacity: .85;
+	background-color: black;
 }
