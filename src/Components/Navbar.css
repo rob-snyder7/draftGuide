@@ -1,0 +1,16 @@
+
+.navbar-inverse span {
+	color: white !important;
+	opacity: .88;
+}
+
+.dropdown-toggle {
+	color: white !important;	
+	opacity: .88;
+}
+
+.navbar-text {
+	color: white !important;
+	opacity: .88;		
+}
+

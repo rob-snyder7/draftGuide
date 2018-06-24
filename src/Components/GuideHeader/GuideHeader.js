@@ -8,8 +8,8 @@ import './GuideHeader.css';
 const GuideHeader = ({onDropdownClick, reset, source, name}) => {
 
 	return (
-		<div className='guideheader'>
-			<div className=''>
+		<div className='guideheader black'>
+			<div className='row'>
 				<div className='col-md-2 col-sm-2 col-xs-2'>
 					<DraftsiteDropdown onDropdownClick={onDropdownClick} source={source}/>
 				</div>

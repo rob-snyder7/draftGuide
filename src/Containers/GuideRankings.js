@@ -40,7 +40,7 @@ class GuideRankings extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='tableFrame'>
 				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
 
 		    	<ReactTable 
@@ -49,8 +49,7 @@ class GuideRankings extends Component {
 			    	data={this.state.data}
 			    	sorted={this.state.sorted}
 			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
-			    	// columns={alterWidth(this.state.columns)}
-			    	columns={this.state.columns}
+			    	columns={alterWidth(this.state.columns)}
 			    	style={{height:'70vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {

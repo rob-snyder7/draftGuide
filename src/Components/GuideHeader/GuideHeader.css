@@ -12,5 +12,15 @@ div.color {
 
 .guideheader {
 	height: 27vh;
-	padding-top: 10vh;
+	padding-top: 60px;
+}
+
+.guideheader h1 {
+	font-size: 32px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.keyText {
+	font-size: calc(6px + .5vw);
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+import './Navbar.css';
 
 const NavbarFunc = ({ onItemClick }) => {
 	
@@ -12,10 +13,10 @@ const NavbarFunc = ({ onItemClick }) => {
 	})
 
 	return (
-		<div>
+		<div className='navbarText'>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous"/>
 
-			<Navbar className='navbar-fixed-top navbar-inverse '>
+			<Navbar className='navbar-fixed-top navbar-inverse'>
 	          <Navbar.Header>
 	              <Navbar.Brand>
 	                <span>Fantasy Football</span>

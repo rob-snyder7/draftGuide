@@ -2,7 +2,7 @@ import React from 'react';
 
 const GuideKey = ({source}) => {
 	return (
-			<div className='row white'>
+			<div className='row white keyText'>
 				          		<div className='col-md-4 col-sm-4 col-xs-12'>
 					         		<span>
 					         				The table compares {source} to average of other sites. Use DIF column to determine value of players. 
