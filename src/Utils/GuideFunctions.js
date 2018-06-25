@@ -2,9 +2,9 @@
 
 export function alterWidth(columns) {
 	for (var i = 0; i < columns.length; i++) {
-		columns[i]['minWidth'] = 40;
+		columns[i]['minWidth'] = 50;
 		if (columns[i]['Header']===`Rank`) {
-			columns[i]['minWidth'] = 30;
+			columns[i]['minWidth'] = 40;
 		} else if (columns[i]['Header']===`Name`) {
 			columns[i]['minWidth'] = 90
 		}
@@ -49,7 +49,7 @@ export function rowColor(rowInfo, pageSize) {
 	 	adjguideColumns.splice(3,0,check[0]);
 	 	adjguideColumns[8]['Header'] = 'AVG w/o ' + event;
   		[3,8,9].forEach(element => {
-  			adjguideColumns[element]['headerStyle'] = {backgroundColor: '#5E8091', fontWeight: 400, width: '10%', color: 'white'};
+  			adjguideColumns[element]['headerStyle'] = {backgroundColor: '#606D77', fontWeight: 400, width: '10%', color: 'white'};
   		});
 	 	return adjguideColumns;
  	}

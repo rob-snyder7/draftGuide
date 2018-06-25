@@ -10,7 +10,7 @@ class GuideRankings extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			source: 'Select Draft Site',
+			source: 'Draft Site',
 			reset: 0,
 			columns: rankColumns,
 			data: this.props.data,
@@ -28,7 +28,7 @@ class GuideRankings extends Component {
 		let hold = 1
 		if (event==='Reset') { 
 			hold = 0 
-			event='Select Draft Site' } 
+			event='Draft Site' } 
 
 		this.setState({reset: hold});
 		this.setState({source: event});

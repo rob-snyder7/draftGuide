@@ -1,9 +1,9 @@
 .guideInstructions {
 	border: 2px solid black;
-	padding: 3px 3px 3px 3px;
-	background-color: #5E8091;
+	padding: 4px 4px 4px 4px !important;
+	background-color: #606D77;
+	margin-bottom: 5px;
 }
-
 
 div.color {
 	border: 1px solid black;
@@ -16,11 +16,64 @@ div.color {
 }
 
 .guideheader h1 {
-	font-size: 32px;
+	font-size: calc(24px + 1vw);
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
 .keyText {
+	font-size: calc(6px + .5vw);
+}
+
+.btn {
+	color: black !important;	
+	font-size: 12px !important;
+	padding: 5px 8px !important;
+}
+
+div.col-md-5 {
+	padding-left: 6px;
+	padding-right: 3px;
+}
+
+div.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+div.keySegment {
+	padding-right: 0px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .btn {
+     font-size: 7px !important;
+     padding: 3px 8px !important;
+  }
+  .guideheader h1 {
+  	font-size: 18px;
+  	padding-top: 3px;
+  	padding-left: 4px;
+  }
+  .keyText {
+  	font-size: calc(2px + 1vw);
+ 	line-height: 12px;
+  }
+  div.keySegment {
+  	padding-left: 5px !important;
+  	padding-bottom: 2px !important;
+  }
+  div.col-xs-5 {
+    width: 37vw;
+  } 
+}
+
+.dropdown-menu>li>a {
+	font-size: 10px;
+}
+
+.howText {
 	font-size: calc(6px + .5vw);
 }

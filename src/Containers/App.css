@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 body {
-  	background: linear-gradient(to bottom right, #5A616C, #CED7E7);
+  	background: linear-gradient(to bottom right, #3A5147, #EAEAEA);
   	font-family: 'Josefin Sans', sans-serif !important;
 }
 
@@ -13,6 +13,22 @@ body {
 .ReactTable .rt-thead::-webkit-scrollbar {
    background: transparent; 
 } 
+
+.ReactTable .rt-tbody {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+@media screen and (max-width: 500px) {
+	.ReactTable .rt-tbody {
+		font-size: 9px;
+		line-height: 9px;
+	}
+	.ReactTable .rt-thead {
+		font-size: 10px;
+		margin-bottom: -10px;
+	}
+}
 
 
 .tableFrame {

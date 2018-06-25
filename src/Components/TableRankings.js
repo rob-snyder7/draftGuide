@@ -9,7 +9,7 @@ const TableRankings = ({name, data}) => {
 	
 	return (
 		<div className='tableFrame'>
-			<h1 className='rankheader black tc'>{name} Rankings</h1>
+			<h1 className='rankheader near-white tc'>{name} Rankings</h1>
 	    	<ReactTable
 	    		pageSize={data.length}
 	    		showPagination={false}

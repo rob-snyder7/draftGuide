@@ -2,13 +2,13 @@ import React from 'react';
 
 const GuideKey = ({source}) => {
 	return (
-			<div className='row white keyText'>
-				          		<div className='col-md-4 col-sm-4 col-xs-12'>
+			<div className='row mb3 white keyText'>
+				          		<div className='guideInstructions col-md-4 col-sm-4 col-xs-12'>
 					         		<span>
-					         				The table compares {source} to average of other sites. Use DIF column to determine value of players. 
+					         				Table compares rankings of {source} to average rankings of other sites. Target players with positive DIF.
 					         		</span>
 					          	</div>
-				          		<div className='col-md-8 col-sm-8 col-xs-12'>
+				          		<div className='keySegment col-md-8 col-sm-8 col-xs-12'>
 					          		<div className="">
 					          			<div className='col-md-1 col-sm-1 col-xs-1 color' style={{backgroundColor: "#2D882D"}}>
 					          			</div>
