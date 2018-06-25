@@ -13,8 +13,8 @@ class App extends Component {
   constructor() {
   	super()
   	this.state = {
-  		route: 1,
-      position: 'Running Backs'
+  		route: 2,
+      position: ''
   	}
   } 
 
