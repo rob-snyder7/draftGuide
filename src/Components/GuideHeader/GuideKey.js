@@ -5,7 +5,7 @@ const GuideKey = ({source}) => {
 			<div className='row mb3 white keyText'>
 				          		<div className='guideInstructions col-md-4 col-sm-4 col-xs-12'>
 					         		<span>
-					         				Table compares rankings of {source} to average rankings of other sites. Target players with positive DIF.
+					         				The table compares rankings of {source} to average rankings of other sites. Target players with positive DIF.
 					         		</span>
 					          	</div>
 				          		<div className='keySegment col-md-8 col-sm-8 col-xs-12'>

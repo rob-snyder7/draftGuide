@@ -6,7 +6,7 @@ const GuideHowTo = () => {
           	<p style={{margin: '0px'}}>
 			  	Select website you are drafting from on drop down bar above.
 			  	<br/>
-			  	Table will compare chosen draft site rankings to average rankings of other sites, highlighting undervalued players to be targeted in draft and overvalued players to be avoided.
+			  	The table will compare chosen draft site rankings to average rankings of other sites, highlighting undervalued players to be targeted in your draft and overvalued players to be avoided.
 			</p>
 		</div>
 	)

@@ -7,7 +7,8 @@ import TableRankings from '../Components/TableRankings';
 import GuideRankings from './GuideRankings';
 import { alRanks, qbRanks, rbRanks, teRanks, wrRanks, deRanks, kiRanks } from '../Utils/Data';
 import 'tachyons';
- 
+import ReactGA from 'react-ga';
+
 
 class App extends Component {
   constructor() {
@@ -27,6 +28,9 @@ class App extends Component {
 
   render() {
 
+    ReactGA.initialize('UA-121403429-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    
     const positionDataReference = {'All': alRanks, 'Quarterbacks': qbRanks, 'Running Backs': rbRanks,'Wide Receivers': wrRanks, 'Tight Ends': teRanks, 'Defenses': deRanks, 'Kickers': kiRanks}
   	let mainDisplays = [<TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />]
     
