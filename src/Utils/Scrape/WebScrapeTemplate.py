@@ -30,7 +30,7 @@ def log_error(e):
 
 
 # Enter url of page to be scraped and name of file for data output
-webURL = 'http://walterfootball.com/fantasycheatsheetwalt/ppr'
+webURL = 'https://fantasyfootballcalculator.com/rankings/ppr'
 outputName = "TempScrape.html"
 dataArray = []
 
@@ -77,7 +77,7 @@ html = BeautifulSoup(simple_get(webURL), 'html.parser')
 #     dataArray[x] = dataArray[x][hold:]
 #     dataArray[x] = dataArray[x].replace('-',' ')
 
-# print(dataArray[200:400])
+# print(dataArray[:200])
 
 
 ### myfantasyleague ###
@@ -115,3 +115,13 @@ html = BeautifulSoup(simple_get(webURL), 'html.parser')
 #     hold = dataArray[x].index(',')
 #     dataArray[x] = dataArray[x][:hold]
 # print(dataArray[:200])
+hold = 0
+for span in html.select('td'):
+    if hold == 1:
+        dataArray.append(span.text)
+        hold = -4
+    hold += 1
+
+print(dataArray)
+print(len(dataArray))
+
