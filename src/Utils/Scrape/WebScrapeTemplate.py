@@ -86,10 +86,8 @@ html = BeautifulSoup(simple_get(webURL), 'html.parser')
 #     if hold > 10 and hold < 215:
 #         dataArray.append(span.text)
 #     hold += 1
-
 # for x in range(len(dataArray)):
 #     dataArray[x] = dataArray[x][:-7]
-
 # remove = []
 # for x in range(len(dataArray)):
 #     try:
@@ -97,31 +95,19 @@ html = BeautifulSoup(simple_get(webURL), 'html.parser')
 #         dataArray[x] = dataArray[x][hold + 2:] + ' ' + dataArray[x][:hold]
 #     except:
 #         remove.append(x)
-
 # for x in remove:
 #     del dataArray[x]
-
 # print((dataArray))
 
-### Walter ###
-# hold = -23
-# for span in html.select('span'):
-#     if hold > 0 and hold%2 == 1:
+
+### ffc ###
+# hold = 0
+# for span in html.select('td'):
+#     if hold == 1:
 #         dataArray.append(span.text)
+#         hold = -4
 #     hold += 1
 
-
-# for x in range(200):
-#     hold = dataArray[x].index(',')
-#     dataArray[x] = dataArray[x][:hold]
-# print(dataArray[:200])
-hold = 0
-for span in html.select('td'):
-    if hold == 1:
-        dataArray.append(span.text)
-        hold = -4
-    hold += 1
-
-print(dataArray)
-print(len(dataArray))
+# print(dataArray)
+# print(len(dataArray))
 
