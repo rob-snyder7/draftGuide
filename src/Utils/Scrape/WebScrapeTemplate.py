@@ -29,51 +29,89 @@ def log_error(e):
     print(e)
 
 
-
 # Enter url of page to be scraped and name of file for data output
-webURL = "https://www.espn.com"
+webURL = 'http://walterfootball.com/fantasycheatsheetwalt/ppr'
 outputName = "TempScrape.html"
+dataArray = []
 
 # Do Not Touch
 html = BeautifulSoup(simple_get(webURL), 'html.parser')
 
-dataArray = []
 # Pick data to be scraped
 
-hold = 1
-# print(html)
-for span in html.select('span'):
-	# dataArray.append(td.text)
-	print(span)
-
-# div = html.find('div', {"class": "search-result_wrapper"})
-# print(div)
-
-
-# # 	if hold == 4:
-# # 		dataArray.append(td.text)
-# # 		hold = -1
-# # 	hold += 1
-
-# print(dataArray)
-# print(len(dataArray))
 
 
 
-# for x in range(len(test)):
-# 	try:
-# 		pos = test[x].index(',')
-# 	except:
-# 		pos = test[x].index(' D/')
-# 	test[x] = test[x][:pos]
 
 
-# print(test)
-
-
-# for x in html.select("td a"):
+### ESPN ###
+# hold = -2
+# for span in html.select('tr.last td'):
 #     if hold == 1:
-#         dataArray.append(x.text)
-#         hold = -2
+#         dataArray.append(span.text)
+#         hold = -3
 #     hold += 1
 
+# for x in range(len(dataArray)):
+#     hold = dataArray[x].index(' ') + 1
+#     dataArray[x] = dataArray[x][hold:]
+
+# print(dataArray)
+
+
+### Yahoo ###
+# for span in html.select('span.full-name'):
+#     dataArray.append(span.text)
+
+# print(dataArray[:200])
+# print(len(dataArray[:200]))
+
+### CBS ###
+# hold = 0
+# for span in html.select('div.player a'):
+#     dataArray.append(span['href'])
+
+# for x in range(len(dataArray)):
+#     dataArray[x] = dataArray[x][:-1]
+#     hold = max(loc for loc, val in enumerate(dataArray[x]) if val == '/') + 1
+#     dataArray[x] = dataArray[x][hold:]
+#     dataArray[x] = dataArray[x].replace('-',' ')
+
+# print(dataArray[200:400])
+
+
+### myfantasyleague ###
+# hold = 0
+# for span in html.select('a'):
+#     if hold > 10 and hold < 215:
+#         dataArray.append(span.text)
+#     hold += 1
+
+# for x in range(len(dataArray)):
+#     dataArray[x] = dataArray[x][:-7]
+
+# remove = []
+# for x in range(len(dataArray)):
+#     try:
+#         hold = dataArray[x].index(',')
+#         dataArray[x] = dataArray[x][hold + 2:] + ' ' + dataArray[x][:hold]
+#     except:
+#         remove.append(x)
+
+# for x in remove:
+#     del dataArray[x]
+
+# print((dataArray))
+
+### Walter ###
+# hold = -23
+# for span in html.select('span'):
+#     if hold > 0 and hold%2 == 1:
+#         dataArray.append(span.text)
+#     hold += 1
+
+
+# for x in range(200):
+#     hold = dataArray[x].index(',')
+#     dataArray[x] = dataArray[x][:hold]
+# print(dataArray[:200])
