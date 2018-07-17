@@ -1,4 +1,4 @@
-from ScrapeFunctions import removeExtras, ranks, simple_get;
+from ScrapeFunctions import removeExtras, ranks, simple_get, addalExtras;
 from bs4 import BeautifulSoup
 import json
 
@@ -100,9 +100,11 @@ ESPalPPR = ["Le'Veon Bell", 'Todd Gurley II', 'David Johnson', 'Antonio Brown', 
 
 
 
-# holdArray = []
+holdArray = []
 
+holdArray = ranks(removeExtras(YAHalPPR), removeExtras(CBSalPPR), removeExtras(ESPalPPR), removeExtras(MYFalPPR), removeExtras(FFCalPPR))
 # holdArray = ranks(removeExtras(YAHal), removeExtras(CBSal), removeExtras(ESPal), removeExtras(MYFal), removeExtras(FFCal))
-# print(holdArray)
-# print(len(holdArray))
+holdArray = addalExtras(holdArray)
+print(holdArray)
+print(len(holdArray))
 
