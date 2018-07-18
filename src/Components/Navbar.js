@@ -29,7 +29,14 @@ const NavbarFunc = ({ onItemClick }) => {
 		          		<span>Home</span>
 		          	</NavItem>
 		            <NavDropdown title="Rankings" id="basic-nav-dropdown">
-		   				{navLinks[0]}
+		            	
+		            		<div className='col-sm-6 twoColumns'>
+				   				{navLinks[0]}
+		   					</div>
+		            		<div className='col-sm-6 twoColumns'>
+				   				{navLinks[0]}
+		   					</div>
+	   					
 		            </NavDropdown>
 		           	<NavDropdown title="Draft" id="basic-nav-dropdown">
 		           		{navLinks[1]}

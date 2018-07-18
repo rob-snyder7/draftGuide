@@ -119,7 +119,7 @@ def fixPositionRanks(positionRanks):
 		positionRanks = sorted(positionRanks, key=lambda k: k[source])
 		for x in range(len(positionRanks)):
 			if positionRanks[x][source] == 999:
-				positionRanks[x][source] = '-'
+				positionRanks[x][source] = 201
 			else:
 				positionRanks[x][source] = x + 1
 

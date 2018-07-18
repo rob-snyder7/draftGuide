@@ -60,6 +60,7 @@ export function rowColor(rowInfo, pageSize) {
  	if (event==='Select Draft Site') {
  		return data;
  	} else {
+ 		let avg = 0
 	 	let adjdata = data.map(u => Object.assign({}, u, { approved: true }));
 	 	let sources = ['YAH', 'CBS', 'ESP', 'MYF', 'FFC'];
 	 	const sourceReference = {'Yahoo': 'YAH', 'CBS': 'CBS', 'ESPN': 'ESP', 'MYF': 'MYF', 'FFC': 'FFC'}
@@ -76,7 +77,11 @@ export function rowColor(rowInfo, pageSize) {
 			  			stdArr.push(adjdata[i][sources[x]]);
 			  		}
 			  	}
-			  	let avg = Math.round((parseFloat(total)/count)*100)/100;
+			  	// if (count==0) {
+			  	// 	adjdata[i]['AVG'] = '-'
+			  	// } else {
+				let avg = Math.round((parseFloat(total)/count)*100)/100;
+			  	// }
 			  	adjdata[i]['AVG'] = avg;
 			  	if (stdArr.length > 1){
 			  		for(let z = 0; z < stdArr.length; z++){

@@ -5,7 +5,7 @@ class DraftsiteDropdown extends Component {
 
 	render () {
 
-		let options = ['Yahoo', 'CBS', 'ESPN', 'FOX', 'NFL', 'Reset']
+		let options = ['Yahoo', 'CBS', 'ESPN', 'MYF', 'FFC', 'Reset']
 		const dropdownOptions = options.map((option) => <MenuItem key={option} onClick={()=>{this.props.onDropdownClick(option)}}>{option}</MenuItem> ); 
 		dropdownOptions.splice(5,0,<MenuItem key='divider' divider/>)
 
