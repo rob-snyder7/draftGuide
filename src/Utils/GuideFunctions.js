@@ -42,7 +42,7 @@ export function rowColor(rowInfo, pageSize) {
  	if (event==='Select Draft Site') {
  		return rankColumns;
  	} else {
- 		const sourceColumn = {'Yahoo': 3, 'CBS': 4, 'ESPN': 5, 'FOX': 6, 'NFL': 7}
+ 		const sourceColumn = {'Yahoo': 3, 'CBS': 4, 'ESPN': 5, 'MYF': 6, 'FFC': 7}
 	 	let adjguideColumns = guideColumns.map(u => Object.assign({}, u, { approved: true }));
 	 	let check = adjguideColumns.splice(sourceColumn[event],1);
 
@@ -61,8 +61,8 @@ export function rowColor(rowInfo, pageSize) {
  		return data;
  	} else {
 	 	let adjdata = data.map(u => Object.assign({}, u, { approved: true }));
-	 	let sources = ['YAH', 'CBS', 'ESP', 'FOX', 'NFL'];
-	 	const sourceReference = {'Yahoo': 'YAH', 'CBS': 'CBS', 'ESPN': 'ESP', 'FOX': 'FOX', 'NFL': 'NFL'}
+	 	let sources = ['YAH', 'CBS', 'ESP', 'MYF', 'FFC'];
+	 	const sourceReference = {'Yahoo': 'YAH', 'CBS': 'CBS', 'ESPN': 'ESP', 'MYF': 'MYF', 'FFC': 'FFC'}
 	 	sources = sources.filter(e => e !== sourceReference[event]);
 	 	  	for(let i = 0; i < adjdata.length; i++){
 		  		let total = 0.00;

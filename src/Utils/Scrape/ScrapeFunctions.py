@@ -11,6 +11,7 @@ alPlayerTeam = {'brandon allen': 'LA', 'josh allen': 'BUF', 'derek anderson': 'C
 abbrevTeam = {'Cardinals': 'ARI', 'Falcons': 'ATL', 'Ravens': 'BAL', 'Bills': 'BUF', 'Panthers': 'CAR', 'Bears': 'CHI', 'Bengals': 'CIN', 'Browns': 'CLE', 'Cowboys': 'DAL', 'Broncos': 'DEN', 'Lions': 'DET', 'Packers': 'GB', 'Texans': 'HOU', 'Colts': 'IND', 'Jaguars': 'JAX', 'Chiefs': 'KC', 'Chargers': 'LAC', 'Rams': 'LA', 'Dolphins': 'MIA', 'Vikings': 'MIN', 'Patriots': 'NE', 'Saints': 'NO', 'Giants': 'NYG', 'Jets': 'NYJ', 'Raiders': 'OAK', 'Eagles': 'PHI', 'Steelers': 'PIT', 'Seahawks': 'SEA', '49ers': 'SF', 'Buccaneers': 'TB', 'Titans': 'TEN', 'Redskins': 'WAS'}
 byeTeam = {'JAX': '8', 'NA': 'NA', 'LA': '8', 'MIN': '9', 'HOU': '7', 'PHI': '10', 'LAC': '9', 'BAL': '10', 'DEN': '5', 'CAR': '11', 'NO': '5', 'KC': '10', 'PIT': '9', 'NE': '9', 'SEA': '6', 'CHI': '9', 'TEN': '8', 'DET': '7', 'ARI': '8', 'CLE': '9', 'GB': '8', 'DAL': '6', 'NYG': '8', 'BUF': '6', 'CIN': '6', 'IND': '11', 'MIA': '11', 'NYJ': '11', 'OAK': '10', 'SF': '11', 'TB': '11', 'WAS': '5', 'ATL': '5'}
 
+removeWords = {' jr' : '', ' ii': '', ' iii': '', ' sr': '', 'fuller v': 'fuller', 'mitchell': 'mitch', 'seferianjenkins': 'seferian-jenkins', 'duke johnson jr': 'duke johnson', 'smithschuster': 'smith-schuster', 'pat mahomes': 'patrick mahomes', 'ricky sealsjones': 'ricky seals-jones'}
 holdArray = []
 
 
@@ -56,30 +57,9 @@ def removeExtras(arr):
 			if char in ".'":
 				arr[x] = arr[x].replace(char,'')
 	for x in range(len(arr)):
-		if 'jr' in arr[x].lower():
-			arr[x] = arr[x].replace(' jr','')
-		if 'ii' in arr[x]:
-			arr[x] = arr[x].replace(' ii','')
-		if ' iv ' in arr[x]:
-			arr[x] = arr[x].replace(' iv ','')
-		if 'fuller v' in arr[x]:
-			arr[x] = arr[x].replace(' v','')
-		if 'iii' in arr[x]:
-			arr[x] = arr[x].replace(' iii','')
-		if 'sr' in arr[x]:
-			arr[x] = arr[x].replace(' sr','')	
-		if 'mitchell' in arr[x]:
-			arr[x] = arr[x].replace('mitchell','mitch')
-		if 'seferianjenkins' in arr[x]:
-			arr[x] = arr[x].replace('seferianjenkins', "seferian-jenkins")
-		if 'duke johnson jr' in arr[x]:
-			arr[x] = 'duke johnson'
-		if 'smithschuster' in arr[x]:
-			arr[x] = arr[x].replace('smithschuster', 'smith-schuster')
-		if 'pat mahomes' in arr[x]:
-			arr[x] = 'patrick mahomes'
-		if 'ricky sealsjones' in arr[x]:
-			arr[x] = 'ricky seals-jones'
+		for word in removeWords.keys():
+			if word in arr[x].lower():
+				arr[x] = arr[x].replace(word, removeWords[word])
 	return arr
 
 
@@ -119,7 +99,7 @@ def ranks(start, src2, src3, src4, src5):
 			for z in range(len(stdArr)):
 				std += (stdArr[z] - avg)**2
 			std = (std/(len(stdArr) - 1))**.5
-		holdArray.append({'name' : listNames[x].title(), 'key' : x, 'YAH' : indexItem(listNames, start, x), 'CBS' : indexItem(listNames, src2, x), 'ESP' : indexItem(listNames, src3, x), 'FOX' : indexItem(listNames, src4, x), 'NFL' : indexItem(listNames, src5, x), 'AVG' :avg, 'STD' :round(std,2)})
+		holdArray.append({'name' : listNames[x].title(), 'key' : x, 'YAH' : indexItem(listNames, start, x), 'CBS' : indexItem(listNames, src2, x), 'ESP' : indexItem(listNames, src3, x), 'MYF' : indexItem(listNames, src4, x), 'FFC' : indexItem(listNames, src5, x), 'AVG' :avg, 'STD' :round(std,2)})
 	return holdArray
 
 
@@ -132,7 +112,7 @@ def addalExtras(data):
 
 
 def fixPositionRanks(positionRanks):
-	for source in ('YAH','CBS','ESP','FOX','NFL'):
+	for source in ('YAH','CBS','ESP','MYF','FFC'):
 		for x in range(len(positionRanks)):
 			if positionRanks[x][source] == '-':
 				positionRanks[x][source] = 999
@@ -150,7 +130,7 @@ def fixPositionMetrics(positionRanks):
 		count = 0
 		std = 0
 		stdArr = []
-		for source in ('YAH','CBS','ESP','FOX','NFL'):
+		for source in ('YAH','CBS','ESP','MYF','FFC'):
 			try:
 				total += positionRanks[x][source]
 				count += 1
@@ -169,23 +149,14 @@ def fixKey(positionRanks):
 	positionRanks = sorted(positionRanks, key=lambda k: k['AVG'])
 	for x in range(len(positionRanks)):
 		positionRanks[x]['key'] = x + 1
-	
 
-# def seperateByPosition(position, dataset):
-# 	hold = []
-# 	for x in range(len(dataset)):
-# 		if dataset[x]['pos'] == position:
-# 			hold.append(dataset[x])
-# 	fixPositionRanks(hold)
-# 	fixPositionMetrics(hold)
-# 	fixKey(hold)
-# 	return hold
 
 def AllFix(dataset):
 	fixPositionRanks(dataset)
 	fixPositionMetrics(dataset)
 	fixKey(dataset)
 	return dataset
+
 
 def ByPositions(dataset):
 	positionsObject = {}
@@ -200,3 +171,7 @@ def ByPositions(dataset):
 		positionsObject[pos] = hold
 		hold = []
 	return positionsObject
+
+
+
+
