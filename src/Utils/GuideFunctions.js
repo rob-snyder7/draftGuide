@@ -1,6 +1,6 @@
  import { guideColumns, rankColumns } from './Data.js';
 
-export function alterWidth(columns) {
+export function alterWidth(columns, name, source) {
 	for (var i = 0; i < columns.length; i++) {
 		columns[i]['minWidth'] = 50;
 		if (columns[i]['Header']===`Rank`) {
@@ -9,7 +9,13 @@ export function alterWidth(columns) {
 			columns[i]['minWidth'] = 90
 		}
 	} 
-	return columns;
+	let adjColumns = columns.map(u => Object.assign({}, u, { approved: true }));
+	if (name !== 'All' && source === 'Draft Site') {
+		console.log(adjColumns.splice(3,1))
+	} else if (name !== 'All' && source !== 'Draft Site') {
+		console.log(adjColumns.splice(2,1))
+	}
+	return adjColumns;
 }
 
 // try without above function?
@@ -38,17 +44,18 @@ export function rowColor(rowInfo, pageSize) {
 	}
 
 
- export function alterColumn(event) {
+ export function alterColumn(event, name) {
  	if (event==='Draft Site') {
  		return rankColumns;
  	} else {
- 		const sourceColumn = {'Yahoo': 3, 'CBS': 4, 'ESPN': 5, 'My Fantasy League': 6}
+ 		console.log(name)
+ 		const sourceColumn = {'Yahoo': 4, 'CBS': 5, 'ESPN': 6, 'My Fantasy League': 7}
 	 	let adjguideColumns = guideColumns.map(u => Object.assign({}, u, { approved: true }));
 	 	let check = adjguideColumns.splice(sourceColumn[event],1);
 
-	 	adjguideColumns.splice(3,0,check[0]);
-	 	adjguideColumns[8]['Header'] = 'AVG w/o ' + event;
-  		[3,8,9].forEach(element => {
+	 	adjguideColumns.splice(4,0,check[0]);
+	 	adjguideColumns[9]['Header'] = 'AVG w/o ' + event;
+  		[4,9,10].forEach(element => {
   			adjguideColumns[element]['headerStyle'] = {backgroundColor: '#606D77', fontWeight: 400, width: '10%', color: 'white'};
   		});
 	 	return adjguideColumns;

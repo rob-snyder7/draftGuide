@@ -102,8 +102,8 @@ ESPalPPR = ["Le'Veon Bell", 'Todd Gurley II', 'David Johnson', 'Antonio Brown', 
 
 holdArray = []
 
-holdArray = ranks(removeExtras(YAHalPPR), removeExtras(CBSalPPR), removeExtras(ESPalPPR), removeExtras(MYFalPPR), removeExtras(FFCalPPR))
-# holdArray = ranks(removeExtras(YAHal), removeExtras(CBSal), removeExtras(ESPal), removeExtras(MYFal), removeExtras(FFCal))
+# holdArray = ranks(removeExtras(YAHalPPR), removeExtras(CBSalPPR), removeExtras(ESPalPPR), removeExtras(MFLalPPR), removeExtras(FFCalPPR))
+holdArray = ranks(removeExtras(YAHal), removeExtras(CBSal), removeExtras(ESPal), removeExtras(MFLal), removeExtras(FFCal))
 holdArray = addalExtras(holdArray)
 print(holdArray)
 print(len(holdArray))

@@ -24,6 +24,7 @@ class GuideRankings extends Component {
 	}
 
 
+
 	onDropdownClick = (event) => {
 		let hold = 1
 		if (event==='Reset') { 
@@ -32,7 +33,7 @@ class GuideRankings extends Component {
 
 		this.setState({reset: hold});
 		this.setState({source: event});
-		this.setState({columns: alterColumn(event)});
+		this.setState({columns: alterColumn(event, this.props.name)});
 		this.setState({data: alterData(this.state.data, event)});	
 		this.setState({ sorted: [{id: 'AVG', asc: true}] });
 	}
@@ -49,7 +50,7 @@ class GuideRankings extends Component {
 			    	data={this.state.data}
 			    	sorted={this.state.sorted}
 			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
-			    	columns={alterWidth(this.state.columns)}
+			    	columns={alterWidth(this.state.columns, this.props.name, this.state.source)}
 			    	style={{height:'67vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {

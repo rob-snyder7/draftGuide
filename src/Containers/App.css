@@ -30,7 +30,6 @@ body {
 	}
 }
 
-
 .tableFrame {
 	padding-left: 2vw;
 	padding-right: 2vw;
@@ -41,15 +40,4 @@ body {
 	height: 17vh;
 	font-size: calc(18px + 2vw);
 }
-
-
-.navbar-xs { min-height:28px !important; height: 28px !important;}
-.navbar-xs .navbar-brand{ padding: 0px 12px !important;font-size: 16px !important ;line-height: 28px !important; }
-.navbar-xs .navbar-nav > li > a {  padding-top: 0px !important; padding-bottom: 0px !important; line-height: 28px !important; }
-
-
-
-
-
-
 

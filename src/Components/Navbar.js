@@ -25,7 +25,7 @@ const NavbarFunc = ({ onItemClick }) => {
 	          </Navbar.Header>
 	          <Navbar.Collapse>
 		          <Nav>
-		          	<NavItem onClick={()=>onItemClick(2)}>
+		          	<NavItem id="navbarHome" onClick={()=>onItemClick(2)}>
 		          		<span>Home</span>
 		          	</NavItem>
 		            <NavDropdown title="PPR" id="basic-nav-dropdown">
