@@ -99,7 +99,7 @@ def ranks(start, src2, src3, src4, src5):
 			for z in range(len(stdArr)):
 				std += (stdArr[z] - avg)**2
 			std = (std/(len(stdArr) - 1))**.5
-		holdArray.append({'name' : listNames[x].title(), 'key' : x, 'YAH' : indexItem(listNames, start, x), 'CBS' : indexItem(listNames, src2, x), 'ESP' : indexItem(listNames, src3, x), 'MYF' : indexItem(listNames, src4, x), 'FFC' : indexItem(listNames, src5, x), 'AVG' :avg, 'STD' :round(std,2)})
+		holdArray.append({'name' : listNames[x].title(), 'key' : x, 'YAH' : indexItem(listNames, start, x), 'CBS' : indexItem(listNames, src2, x), 'ESP' : indexItem(listNames, src3, x), 'MFL' : indexItem(listNames, src4, x), 'FFC' : indexItem(listNames, src5, x), 'AVG' :avg, 'STD' :round(std,2)})
 	return holdArray
 
 
@@ -112,17 +112,21 @@ def addalExtras(data):
 
 
 def fixPositionRanks(positionRanks):
-	for source in ('YAH','CBS','ESP','MYF','FFC'):
+	for source in ('YAH','CBS','ESP','MFL','FFC'):
+		positionCount = 1
 		for x in range(len(positionRanks)):
 			if positionRanks[x][source] == '-':
 				positionRanks[x][source] = 999
+			else:
+				positionCount += 1
 		positionRanks = sorted(positionRanks, key=lambda k: k[source])
 		for x in range(len(positionRanks)):
 			if positionRanks[x][source] == 999:
-				positionRanks[x][source] = 201
+				positionRanks[x][source] = positionCount
 			else:
 				positionRanks[x][source] = x + 1
 
+#fix the 201 to represent how many players at each site for each position
 
 def fixPositionMetrics(positionRanks):
 	for x in range(len(positionRanks)):
@@ -130,7 +134,7 @@ def fixPositionMetrics(positionRanks):
 		count = 0
 		std = 0
 		stdArr = []
-		for source in ('YAH','CBS','ESP','MYF','FFC'):
+		for source in ('YAH','CBS','ESP','MFL','FFC'):
 			try:
 				total += positionRanks[x][source]
 				count += 1

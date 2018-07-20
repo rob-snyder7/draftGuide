@@ -13,11 +13,3 @@
 	color: white !important;
 	opacity: .88;		
 }
-
-.twoColumns {
-	min-width: 100px;
-}
-
-ul.dropdown-menu {
-	width: 300px;
-}

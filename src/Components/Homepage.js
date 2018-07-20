@@ -14,11 +14,11 @@ const Homepage = ({ onItemClick }) => {
 
 			<div style={{backgroundImage: 'url(' + require('../background.jpg') + ')'}} className="homepage tc">
 			  <div className="fl w-100 w-50-ns group">
-			    <h1 className='homeHeader'>Rankings</h1>
+			    <h1 className='homeHeader'>PPR</h1>
 			    {pageLinks[0]}
 			  </div>
 			  <div className="fl w-100 w-50-ns group">
-			    <h1 className='homeHeader'>Draft Guide</h1>
+			    <h1 className='homeHeader'>Standard</h1>
 			    {pageLinks[1]}
 			  </div>
 			</div>

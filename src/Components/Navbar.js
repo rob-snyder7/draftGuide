@@ -28,21 +28,14 @@ const NavbarFunc = ({ onItemClick }) => {
 		          	<NavItem onClick={()=>onItemClick(2)}>
 		          		<span>Home</span>
 		          	</NavItem>
-		            <NavDropdown title="Rankings" id="basic-nav-dropdown">
-		            	
-		            		<div className='col-sm-6 twoColumns'>
-				   				{navLinks[0]}
-		   					</div>
-		            		<div className='col-sm-6 twoColumns'>
-				   				{navLinks[0]}
-		   					</div>
-	   					
+		            <NavDropdown title="PPR" id="basic-nav-dropdown">
+		           		{navLinks[0]}
 		            </NavDropdown>
-		           	<NavDropdown title="Draft" id="basic-nav-dropdown">
+		           	<NavDropdown title="Standard" id="basic-nav-dropdown">
 		           		{navLinks[1]}
 		            </NavDropdown>
 		          </Nav>
-           	  <Navbar.Text pullRight>Rankings and Draft Strategy Guide</Navbar.Text>
+           	  <Navbar.Text pullRight>Draft Strategy Guide</Navbar.Text>
 	          </Navbar.Collapse>
 	        </Navbar>
 		</div>

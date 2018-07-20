@@ -5,7 +5,7 @@ import NavbarFunc from '../Components/Navbar';
 import Homepage from '../Components/Homepage';
 import TableRankings from '../Components/TableRankings';
 import GuideRankings from './GuideRankings';
-import { AllRanks, Ranks } from '../Utils/Data';
+import { AllRanks, Ranks, AllRanksPPR, RanksPPR } from '../Utils/Data';
 import 'tachyons';
 import ReactGA from 'react-ga';
 
@@ -33,7 +33,9 @@ class App extends Component {
     ReactGA.pageview(window.location.pathname + window.location.search);
     
     const positionDataReference = {'All': AllRanks, 'Quarterbacks': Ranks['QB'], 'Running Backs': Ranks['RB'],'Wide Receivers': Ranks['WR'], 'Tight Ends': Ranks['TE'], 'Defenses': Ranks['DEF'], 'Kickers': Ranks['K']}
-  	let mainDisplays = [<TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />]
+    const positionDataReferencePPR = {'All': AllRanksPPR, 'Quarterbacks': RanksPPR['QB'], 'Running Backs': RanksPPR['RB'],'Wide Receivers': RanksPPR['WR'], 'Tight Ends': RanksPPR['TE'], 'Defenses': RanksPPR['DEF'], 'Kickers': RanksPPR['K']}
+  	
+    let mainDisplays = [<GuideRankings data={positionDataReferencePPR[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />, <TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>]
     
     return (
     	<div>

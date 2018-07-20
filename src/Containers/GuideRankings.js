@@ -50,7 +50,7 @@ class GuideRankings extends Component {
 			    	sorted={this.state.sorted}
 			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
 			    	columns={alterWidth(this.state.columns)}
-			    	style={{height:'70vh', background: '#CCCCCC'}}
+			    	style={{height:'67vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {
 			    			style: {
@@ -58,6 +58,7 @@ class GuideRankings extends Component {
 			    	}}}}
 			    	onSortedChange={sorted=>{this.setState({ sorted });}}
 		    	/>
+		    	<p className='fr pt3 f5'>*MFL - My Fantasy League,  FFC - Fantasy Football Calculator</p>
 			</div>
 		)
 	}
