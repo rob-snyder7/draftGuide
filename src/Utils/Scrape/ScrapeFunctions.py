@@ -105,6 +105,8 @@ def ranks(start, src2, src3, src4, src5):
 
 def addalExtras(data):
 	for x in range(len(data)):
+		if data[x]['name']=='49Ers':
+			data[x]['name'] = '49ers'
 		data[x]['team'] = alPlayerTeam[data[x]['name'].lower()]
 		data[x]['bye'] = byeTeam[data[x]['team']]
 		data[x]['pos'] = alPlayerPosition[data[x]['name'].lower()]

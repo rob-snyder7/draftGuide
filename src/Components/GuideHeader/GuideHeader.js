@@ -5,7 +5,12 @@ import GuideHowTo from './GuideHowTo';
 import './GuideHeader.css';
 
 
-const GuideHeader = ({onDropdownClick, reset, source, name}) => {
+const GuideHeader = ({onDropdownClick, reset, source, name, route}) => {
+
+	let rankType = 'PPR'
+	if (route===1) {
+		rankType = 'Standard'
+	} 
 
 	return (
 		<div className='guideheader black'>
@@ -14,7 +19,7 @@ const GuideHeader = ({onDropdownClick, reset, source, name}) => {
 					<DraftsiteDropdown onDropdownClick={onDropdownClick} source={source}/>
 				</div>
 				<div className='col-md-8 col-sm-8 col-xs-10'>
-					<h1 className='tc white'>{name} Rankings</h1>
+					<h1 className='tc white'>{name} {rankType}</h1>
 				</div>
 				<div className='col-md-2 col-sm-2 col-xs-0'></div>
 			</div>

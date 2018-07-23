@@ -10,10 +10,10 @@ export function alterWidth(columns, name, source) {
 		}
 	} 
 	let adjColumns = columns.map(u => Object.assign({}, u, { approved: true }));
-	if (name !== 'All' && source === 'Draft Site') {
-		console.log(adjColumns.splice(3,1))
-	} else if (name !== 'All' && source !== 'Draft Site') {
-		console.log(adjColumns.splice(2,1))
+	if (name !== 'Top 300' && source === 'Draft Site') {
+		adjColumns.splice(3,1)
+	} else if (name !== 'Top 300' && source !== 'Draft Site') {
+		adjColumns.splice(2,1)
 	}
 	return adjColumns;
 }
@@ -57,7 +57,6 @@ export function rowColor(rowInfo, pageSize) {
  	if (event==='Draft Site') {
  		return rankColumns;
  	} else {
- 		console.log(name)
  		const sourceColumn = {'Yahoo': 4, 'CBS': 5, 'ESPN': 6, 'My Fantasy League': 7}
 	 	let adjguideColumns = guideColumns.map(u => Object.assign({}, u, { approved: true }));
 	 	let check = adjguideColumns.splice(sourceColumn[event],1);

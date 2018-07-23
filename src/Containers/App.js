@@ -32,10 +32,10 @@ class App extends Component {
     ReactGA.initialize('UA-121403429-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
     
-    const positionDataReference = {'All': AllRanks, 'Quarterbacks': Ranks['QB'], 'Running Backs': Ranks['RB'],'Wide Receivers': Ranks['WR'], 'Tight Ends': Ranks['TE'], 'Defenses': Ranks['DEF'], 'Kickers': Ranks['K']}
-    const positionDataReferencePPR = {'All': AllRanksPPR, 'Quarterbacks': RanksPPR['QB'], 'Running Backs': RanksPPR['RB'],'Wide Receivers': RanksPPR['WR'], 'Tight Ends': RanksPPR['TE'], 'Defenses': RanksPPR['DEF'], 'Kickers': RanksPPR['K']}
+    const positionDataReference = {'Top 300': AllRanks, 'Quarterbacks': Ranks['QB'], 'Running Backs': Ranks['RB'],'Wide Receivers': Ranks['WR'], 'Tight Ends': Ranks['TE'], 'Defenses': Ranks['DEF'], 'Kickers': Ranks['K']}
+    const positionDataReferencePPR = {'Top 300': AllRanksPPR, 'Quarterbacks': RanksPPR['QB'], 'Running Backs': RanksPPR['RB'],'Wide Receivers': RanksPPR['WR'], 'Tight Ends': RanksPPR['TE'], 'Defenses': RanksPPR['DEF'], 'Kickers': RanksPPR['K']}
   	
-    let mainDisplays = [<GuideRankings data={positionDataReferencePPR[this.state.position]} name={this.state.position}/>, <GuideRankings data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />, <TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>]
+    let mainDisplays = [<GuideRankings route={this.state.route} data={positionDataReferencePPR[this.state.position]} name={this.state.position}/>, <GuideRankings route={this.state.route} data={positionDataReference[this.state.position]} name={this.state.position}/>, <Homepage onItemClick={this.onItemClick} />, <TableRankings data={positionDataReference[this.state.position]} name={this.state.position}/>]
     
     return (
     	<div>

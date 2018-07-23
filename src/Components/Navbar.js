@@ -5,7 +5,7 @@ import './Navbar.css';
 const NavbarFunc = ({ onItemClick }) => {
 	
 
-	const positions = ['All','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
+	const positions = ['Top 300','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
 	const navLinks = [0,1]
 
 	navLinks.forEach(function(element) {

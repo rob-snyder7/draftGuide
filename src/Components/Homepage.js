@@ -3,7 +3,7 @@ import './Homepage.css';
 
 const Homepage = ({ onItemClick }) => {
 
-	const positions = ['All','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
+	const positions = ['Top 300','Quarterbacks','Running Backs', 'Wide Receivers', 'Tight Ends', 'Defenses']
 	const pageLinks = [0,1]
 
 	pageLinks.forEach(function(element) {

@@ -8,10 +8,7 @@ export const AllRanksPPR = [{'name': '49Ers', 'key': 243, 'YAH': 201, 'CBS': 201
 
 
 // 49Ers fix the E
-// crossout ability
-// add PPR or Standard to header names
-// sortable by position alphabetically
-// add astericks to MFL and FFC
+// pull rankings for top 300
 
 const headerStyle = {
 	background: '#CCCCCC',
@@ -62,12 +59,12 @@ export const rankColumns = [
 	sortable: true,
 	headerStyle: headerStyle,
 }, {
-	Header: 'MFL',
+	Header: 'MFL*',
 	accessor: 'MFL',
 	sortable: true,
 	headerStyle: headerStyle,
 }, {
-	Header: 'FFC',
+	Header: 'FFC*',
 	accessor: 'FFC',
 	sortable: true,
 	headerStyle: headerStyle,

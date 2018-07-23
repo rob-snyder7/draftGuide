@@ -44,33 +44,30 @@ class GuideRankings extends Component {
 	render() {
 		return (
 			<div className='tableFrame'>
-				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
+				<GuideHeader route={this.props.route} onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
 		
 		    	<ReactTable 
 		    		pageSize={this.state.data.length}
 		    		showPagination={false}
 			    	data={this.state.data}
 			    	sorted={this.state.sorted}
-			    	defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
+			    	// defaultSortMethod={(a,b,order) => {if (a==='-'){a = 999;} if (b==='-'){b = 999;} if (order === 'asc') {return b - a;}return a - b;}}
 			    	columns={alterWidth(this.state.columns, this.props.name, this.state.source)}
 			    	style={{height:'67vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {
 			    			onClick: (e) => {
 			    				if (this.state.selected.includes(rowInfo.index)) {
-			    					let hold = this.state.selected.indexOf(rowInfo.index)
 			    					let holdArr = this.state.selected
-			    					holdArr.splice(hold, 1)
+			    					holdArr.splice(this.state.selected.indexOf(rowInfo.index), 1)
 			    					this.setState({selected: holdArr})
 			    				} else {
 				    				this.setState({ selected: this.state.selected.concat(rowInfo.index)})
 			    				}
-			    				console.log(this.state.selected)
 			    			},
 			    			style: {
 			    				background: rowColor(rowInfo, this.state.data.length),
-								textDecoration: rowClickColor(rowInfo, this.state.selected)
-							    
+								textDecoration: rowClickColor(rowInfo, this.state.selected)	    
 			    	}}}}
 
 			    	onSortedChange={sorted=>{this.setState({ sorted });}}
