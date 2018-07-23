@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactTable from "react-table";
 import GuideHeader from '../Components/GuideHeader/GuideHeader';
 import { rankColumns } from '../Utils/Data';
-import { alterColumn, alterData, alterWidth, rowColor } from '../Utils/GuideFunctions';
+import { alterColumn, alterData, alterWidth, rowColor, rowClickColor } from '../Utils/GuideFunctions';
 
 
 
@@ -14,7 +14,8 @@ class GuideRankings extends Component {
 			reset: 0,
 			columns: rankColumns,
 			data: this.props.data,
-			sorted: [{id: 'AVG', asc: true}]
+			sorted: [{id: 'AVG', asc: true}],
+			selected: []
 		}
 	}
 
@@ -36,6 +37,7 @@ class GuideRankings extends Component {
 		this.setState({columns: alterColumn(event, this.props.name)});
 		this.setState({data: alterData(this.state.data, event)});	
 		this.setState({ sorted: [{id: 'AVG', asc: true}] });
+		this.setState({ selected: []});
 	}
 
 
@@ -43,7 +45,7 @@ class GuideRankings extends Component {
 		return (
 			<div className='tableFrame'>
 				<GuideHeader onDropdownClick={this.onDropdownClick} reset={this.state.reset} source={this.state.source} name={this.props.name}/>
-
+		
 		    	<ReactTable 
 		    		pageSize={this.state.data.length}
 		    		showPagination={false}
@@ -54,9 +56,23 @@ class GuideRankings extends Component {
 			    	style={{height:'67vh', background: '#CCCCCC'}}
 			    	getTrProps={(state, rowInfo, row, column) => {
 			    		return {
+			    			onClick: (e) => {
+			    				if (this.state.selected.includes(rowInfo.index)) {
+			    					let hold = this.state.selected.indexOf(rowInfo.index)
+			    					let holdArr = this.state.selected
+			    					holdArr.splice(hold, 1)
+			    					this.setState({selected: holdArr})
+			    				} else {
+				    				this.setState({ selected: this.state.selected.concat(rowInfo.index)})
+			    				}
+			    				console.log(this.state.selected)
+			    			},
 			    			style: {
-			    				background: rowColor(rowInfo, this.state.data.length)
+			    				background: rowColor(rowInfo, this.state.data.length),
+								textDecoration: rowClickColor(rowInfo, this.state.selected)
+							    
 			    	}}}}
+
 			    	onSortedChange={sorted=>{this.setState({ sorted });}}
 		    	/>
 		    	<p className='fr pt3 f5'>*MFL - My Fantasy League,  FFC - Fantasy Football Calculator</p>

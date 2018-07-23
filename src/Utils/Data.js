@@ -8,10 +8,10 @@ export const AllRanksPPR = [{'name': '49Ers', 'key': 243, 'YAH': 201, 'CBS': 201
 
 
 // 49Ers fix the E
-// add position to all columns (Have to add to original all pull and when you select after)
 // crossout ability
 // add PPR or Standard to header names
 // sortable by position alphabetically
+// add astericks to MFL and FFC
 
 const headerStyle = {
 	background: '#CCCCCC',

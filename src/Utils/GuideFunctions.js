@@ -21,6 +21,15 @@ export function alterWidth(columns, name, source) {
 // try without above function?
 // 50,40,100
 
+
+export function rowClickColor(rowInfo, selected) {
+	for (var x = 0; x < selected.length; x++) {
+		if (rowInfo.index === selected[x]) {
+			return 'line-through'
+		}
+	}
+}
+
 export function rowColor(rowInfo, pageSize) {
 		let difVal = rowInfo.row.DIF / (pageSize/50)
 		  if (difVal > 12) {
