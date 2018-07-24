@@ -18,9 +18,6 @@ export function alterWidth(columns, name, source) {
 	return adjColumns;
 }
 
-// try without above function?
-// 50,40,100
-
 
 export function rowClickColor(rowInfo, selected) {
 	for (var x = 0; x < selected.length; x++) {
@@ -75,7 +72,6 @@ export function rowColor(rowInfo, pageSize) {
  	if (event==='Select Draft Site') {
  		return data;
  	} else {
- 		let avg = 0
 	 	let adjdata = data.map(u => Object.assign({}, u, { approved: true }));
 	 	let sources = ['YAH', 'CBS', 'ESP', 'MFL', 'FFC'];
 	 	const sourceReference = {'Yahoo': 'YAH', 'CBS': 'CBS', 'ESPN': 'ESP', 'My Fantasy League': 'MFL', 'FFC': 'FFC'}
@@ -92,11 +88,7 @@ export function rowColor(rowInfo, pageSize) {
 			  			stdArr.push(adjdata[i][sources[x]]);
 			  		}
 			  	}
-			  	// if (count==0) {
-			  	// 	adjdata[i]['AVG'] = '-'
-			  	// } else {
 				let avg = Math.round((parseFloat(total)/count)*100)/100;
-			  	// }
 			  	adjdata[i]['AVG'] = avg;
 			  	if (stdArr.length > 1){
 			  		for(let z = 0; z < stdArr.length; z++){

@@ -11,7 +11,7 @@ alPlayerTeam = {'brandon allen': 'LA', 'josh allen': 'BUF', 'derek anderson': 'C
 abbrevTeam = {'Cardinals': 'ARI', 'Falcons': 'ATL', 'Ravens': 'BAL', 'Bills': 'BUF', 'Panthers': 'CAR', 'Bears': 'CHI', 'Bengals': 'CIN', 'Browns': 'CLE', 'Cowboys': 'DAL', 'Broncos': 'DEN', 'Lions': 'DET', 'Packers': 'GB', 'Texans': 'HOU', 'Colts': 'IND', 'Jaguars': 'JAX', 'Chiefs': 'KC', 'Chargers': 'LAC', 'Rams': 'LA', 'Dolphins': 'MIA', 'Vikings': 'MIN', 'Patriots': 'NE', 'Saints': 'NO', 'Giants': 'NYG', 'Jets': 'NYJ', 'Raiders': 'OAK', 'Eagles': 'PHI', 'Steelers': 'PIT', 'Seahawks': 'SEA', '49ers': 'SF', 'Buccaneers': 'TB', 'Titans': 'TEN', 'Redskins': 'WAS'}
 byeTeam = {'JAX': '8', 'NA': 'NA', 'LA': '8', 'MIN': '9', 'HOU': '7', 'PHI': '10', 'LAC': '9', 'BAL': '10', 'DEN': '5', 'CAR': '11', 'NO': '5', 'KC': '10', 'PIT': '9', 'NE': '9', 'SEA': '6', 'CHI': '9', 'TEN': '8', 'DET': '7', 'ARI': '8', 'CLE': '9', 'GB': '8', 'DAL': '6', 'NYG': '8', 'BUF': '6', 'CIN': '6', 'IND': '11', 'MIA': '11', 'NYJ': '11', 'OAK': '10', 'SF': '11', 'TB': '11', 'WAS': '5', 'ATL': '5'}
 
-removeWords = {' jr' : '', ' ii': '', ' iii': '', ' sr': '', 'fuller v': 'fuller', 'mitchell': 'mitch', 'seferianjenkins': 'seferian-jenkins', 'duke johnson jr': 'duke johnson', 'smithschuster': 'smith-schuster', 'pat mahomes': 'patrick mahomes', 'ricky sealsjones': 'ricky seals-jones'}
+removeWords = {' jr' : '', ' ii': '', ' iii': '', ' sr': '', 'fuller v': 'fuller', 'mitchell trubisky': 'mitch trubisky', 'seferianjenkins': 'seferian-jenkins', 'duke johnson jr': 'duke johnson', 'smithschuster': 'smith-schuster', 'pat mahomes': 'patrick mahomes', 'ricky sealsjones': 'ricky seals-jones', 'ben watson': 'benjamin watson'}
 holdArray = []
 
 
@@ -161,7 +161,7 @@ def AllFix(dataset):
 	fixPositionRanks(dataset)
 	fixPositionMetrics(dataset)
 	fixKey(dataset)
-	return dataset
+	return sorted(dataset, key=lambda k: k['key'])[:300]
 
 
 def ByPositions(dataset):
