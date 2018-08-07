@@ -23,7 +23,7 @@ const GuideHeader = ({onDropdownClick, reset, source, name, route}) => {
 				</div>
 				<div className='col-md-2 col-sm-2 col-xs-0'></div>
 			</div>
-			<div className='pt3'>
+			<div className='guidePadding'>
 			{[<GuideHowTo />, <GuideKey source={source}/>][reset]}
 			</div>
 		</div>

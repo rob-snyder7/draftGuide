@@ -15,6 +15,10 @@ div.color {
 	padding-top: 60px;
 }
 
+.guidePadding {
+	padding-top: 3.5vh;
+}
+
 .guideheader h1 {
 	font-size: calc(24px + 1vw);
 	margin-top: 0px;

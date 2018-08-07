@@ -7,5 +7,3 @@ ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
 
  
-// ability to cross out rows(use while drafting)
-// include ppr and non ppr??
