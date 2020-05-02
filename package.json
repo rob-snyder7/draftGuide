@@ -2,7 +2,7 @@
   "name": "draftguide",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rksnyder7.github.io/draftGuide",
+  
   "dependencies": {
     "gh-pages": "^1.2.0",
     "react": "^16.4.2",
